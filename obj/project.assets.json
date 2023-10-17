@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxx5\\Desktop\\fwaef\\fwaef.csproj",
+      "projectUniqueName": "C:\\Users\\maxx5\\Desktop\\calculator-new-version\\fwaef.csproj",
       "projectName": "fwaef",
-      "projectPath": "C:\\Users\\maxx5\\Desktop\\fwaef\\fwaef.csproj",
+      "projectPath": "C:\\Users\\maxx5\\Desktop\\calculator-new-version\\fwaef.csproj",
       "packagesPath": "C:\\Users\\maxx5\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxx5\\Desktop\\fwaef\\obj\\",
+      "outputPath": "C:\\Users\\maxx5\\Desktop\\calculator-new-version\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maxx5\\AppData\\Roaming\\NuGet\\NuGet.Config"

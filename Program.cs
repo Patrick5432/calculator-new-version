@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿﻿// See https://aka.ms/new-console-template for more information
 // See https://aka.ms/new-console-template for more information
 
 using System.Security.AccessControl;
@@ -22,6 +22,14 @@ public class Calculator
 
     public double Div(double firstNumber, double secondNumber)
     {
+        if (secondNumber == 0)
+        {
+            Calculator cal = new Calculator();
+            Simple simp = new Simple(cal);
+            Console.WriteLine("error:DivideByZeroException");
+            simp.Simp();
+            
+        }
         return firstNumber / secondNumber;
     }
 }
@@ -39,8 +47,11 @@ public class Simple
         bool check = true;
         double result = 0;
 
+        try
+        {
         Console.WriteLine("Введите первое число");
         double firstNumber = Convert.ToInt64(Console.ReadLine());
+        
 
         while (check == true)
         {
@@ -67,8 +78,20 @@ public class Simple
                 break;
 
                 case "/":
+                try
+                {
                 result = cal.Div(firstNumber, secondNumber);
                 Console.WriteLine(result);
+                }
+
+                catch (DivideByZeroException ex){
+                    Console.WriteLine("error" + ex);
+                }
+                break;
+                default:
+                Simple simp = new Simple(cal);
+                Console.WriteLine("error:InvalidValueEntered");
+                simp.Simp();
                 break;
             }
 
@@ -84,8 +107,7 @@ public class Simple
                 question = Console.ReadLine();
                 if (question == "Да")
                 {
-                    Console.WriteLine("Введите первое число");
-                    firstNumber = Convert.ToInt64(Console.ReadLine());
+                    Simp();
                 }
                 else
                 {
@@ -93,6 +115,19 @@ public class Simple
                 }
                 break;
             }
+        }
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine("ERR" + ex);
+            Simple simp = new Simple(cal);
+            simp.Simp();
+        }
+        catch (OverflowException ex)
+        {
+            Console.WriteLine("ERR" + ex);
+            Simple simp = new Simple(cal);
+            simp.Simp();
         }
 
     }
